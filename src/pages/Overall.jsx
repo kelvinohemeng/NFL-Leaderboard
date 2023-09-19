@@ -8,6 +8,7 @@ function Overall() {
   const [leaderboard, setLeaderBoard] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // data fetch from database, in this example we are pulling the data from google sheets
   const fetchData = () => {
     fetch(
       "https://script.google.com/macros/s/AKfycbwLfCPxmbDzSeaBDVl0-BWJatpdqrF5XvL_7R3_igHCLrV5RvnTHZgiCo22bgzV6ceS/exec"
@@ -34,7 +35,10 @@ function Overall() {
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
+
+  //this block handles the search functionality for the leaderboard.
   const handleSearch = (searchTerm) => {
+    // the searchTerm serves as an argument which will be provided later on in the input feild should the user searc
     setSearchTerm(searchTerm);
   };
 
@@ -52,7 +56,12 @@ function Overall() {
         <Preloader />
       ) : (
         <>
-          <div className=" md:min-w-[80vw] h-[80vh] bg-white bg-opacity-10 backdrop-blur-md flex flex-col  space-y-5 p-3 md:p-5 rounded-lg">
+          <img
+            className="max-w-[500px] object-cover  absolute -bottom-10 -left-[3vw]"
+            src="/dash.png"
+            alt=""
+          />
+          <div className=" md:w-[60vw] h-[80vh] bg-white bg-opacity-10 backdrop-blur-md flex flex-col  space-y-5 p-3 md:p-5 rounded-lg">
             <div className="flex  flex-col ">
               <div className=" w-full px-2 flex flex-col md:flex-row justify-between items-center space-y-5">
                 <div className=" flex flex-col">
@@ -78,18 +87,22 @@ function Overall() {
               </div>
             </div>
             <div className="scroll  flex flex-col justify-start items-start overflow-y-scroll max-w-screen md:w-full  h-full">
-              <div className=" flex justify-between items-center w-full py-2 text-xl pl-3 text-white font-bold sticky top-0 bg-[#191818] ">
+              <div className=" flex justify-between items-center w-full py-2 text-xl pl-3 pr-6 text-white font-bold sticky top-0 bg-[#191818] ">
                 <div className=" flex flex-1 gap-3 md:gap-5 text-xl  font-bold">
                   <h1 className=" hidden md:block">Pos.</h1>
                   <h1 className=" block md:hidden">#</h1>
-                  <h1 className=" md:w-[80px] flex justify-start">Name</h1>
+                  <h1 className=" md:w-[80px] md:flex justify-start hidden">
+                    Name
+                  </h1>
+                  <h1 className=" block md:hidden ">id</h1>
                 </div>
 
                 <h1 className=" flex-1 flex justify-center">QB Toss</h1>
                 <h1 className=" flex-1 flex justify-center">V. Jump</h1>
                 <h1 className=" flex-1 flex justify-center">40Y</h1>
-                <h1 className=" flex-1 flex justify-center">TTL</h1>
+                <h1 className=" flex-1 flex justify-center ">Tot</h1>
               </div>
+              {/* the iteration block of the code where ther leaderboard is displayed. */}
               {filteredData.map((leader, index) => {
                 let itemClass = ""; // Initialize as an empty string
 

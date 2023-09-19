@@ -53,11 +53,11 @@ function VerticalJump() {
       ) : (
         <>
           <img
-            className="max-w-[450px] absolute left-0 -bottom-[10vh]"
+            className="max-w-[400px] absolute left-10 -bottom-[10vh] -rotate-[8deg]"
             src="/vertical.png"
             alt=""
           />
-          <div className=" w-full md:w-[50vw] h-[80vh] bg-white bg-opacity-10  backdrop-blur-md flex flex-col space-y-10 p-3 md:p-5 rounded-lg">
+          <div className=" w-full md:w-[50vw] h-[90vh] bg-white bg-opacity-10  backdrop-blur-md flex flex-col space-y-10 p-3 md:p-5 rounded-lg">
             <div className="flex  flex-col">
               <div className=" w-full  flex flex-col md:flex-row justify-between items-center space-y-2">
                 <div className=" flex justify-center md:justify-start w-full">
@@ -93,7 +93,7 @@ function VerticalJump() {
               </div> */}
             </div>
             <div className="scroll  flex flex-col justify-start items-start overflow-y-scroll h-full ">
-              <div className=" flex justify-between w-full p-3 text-xl text-white font-bold sticky top-0 bg-[#191818]">
+              <div className=" flex justify-between w-full p-3 pr-6 text-xl text-white font-bold sticky top-0 bg-[#191818]">
                 <div className=" flex gap-2 text-xl md:gap-4 font-bold">
                   <h1>Pos.</h1>
                   <h1>Name</h1>
