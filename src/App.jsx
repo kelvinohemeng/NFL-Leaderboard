@@ -23,9 +23,10 @@ function App() {
             backgroundRepeat: "no-repeat",
           }}
         ></div>
+
         {/* these are the various pages for the leader board, uncomment them to see them */}
 
-        {/* <Overall /> */}
+        <Overall />
         {/* <QBtoss /> */}
         {/* <FourtyYard /> */}
         {/* <VerticalJump /> */}
