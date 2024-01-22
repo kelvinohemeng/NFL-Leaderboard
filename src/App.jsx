@@ -26,30 +26,19 @@ function App() {
 
         {/* these are the various pages for the leader board, uncomment them to see them */}
 
-        <Overall />
+        {/* <Overall /> */}
         {/* <QBtoss /> */}
         {/* <FourtyYard /> */}
         {/* <VerticalJump /> */}
 
         {/* this is the version that uses react router */}
 
-        {/* <Routes>
-          <Route path="/" element={<Overall unLoad={setIsLoading} />} />
-          <Route
-            path="/qbtos"
-            element={<QBtoss isLoading={isLoading} unLoad={setIsLoading} />}
-          />
-          <Route
-            path="/40yard"
-            element={<FourtyYard isLoading={isLoading} unLoad={setIsLoading} />}
-          />
-          <Route
-            path="/verticaljump"
-            element={
-              <VerticalJump isLoading={isLoading} unLoad={setIsLoading} />
-            }
-          />
-        </Routes> */}
+        <Routes>
+          <Route path="/" element={<Overall />} />
+          <Route path="/qbtos" element={<QBtoss />} />
+          <Route path="/40yard" element={<FourtyYard />} />
+          <Route path="/verticaljump" element={<VerticalJump />} />
+        </Routes>
       </div>
     </>
   );

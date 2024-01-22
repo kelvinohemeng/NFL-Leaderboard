@@ -9,8 +9,8 @@ function Overall() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // data fetch from database, in this example we are pulling the data from google sheets
-  const fetchData = () => {
-    fetch(
+  const fetchData = async () => {
+    await fetch(
       "https://script.google.com/macros/s/AKfycbwLfCPxmbDzSeaBDVl0-BWJatpdqrF5XvL_7R3_igHCLrV5RvnTHZgiCo22bgzV6ceS/exec"
     )
       .then((response) => response.json())
