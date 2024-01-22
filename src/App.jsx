@@ -12,7 +12,7 @@ const VerticalJump = lazy(() => import("./pages/VerticalJump"));
 function App() {
   return (
     <>
-      <Home />
+      {/* <Home /> */}
       <div className="w-screen relative min-h-screen flex justify-center pt-[10vh] md:pt-[0] md:justify-end items-center overflow-x-hidden md:overflow-hidden container mx-auto px-4">
         <div
           className="bg-gray-500 fixed -z-10 inset-0"
