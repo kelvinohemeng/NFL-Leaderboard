@@ -8,8 +8,8 @@ function VerticalJump() {
   const [leaderboard, setLeaderBoard] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const fetchData = () => {
-    fetch(
+  const fetchData = async () => {
+    await fetch(
       "https://script.google.com/macros/s/AKfycby7tRC5hZ5yrSB94nzZjuGfXg1YOw4ze6K8AEdXBg7SzJy5RhwPGFAd6FYH2Jc9AnIb/exec"
     )
       .then((response) => response.json())

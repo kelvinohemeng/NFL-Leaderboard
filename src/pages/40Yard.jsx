@@ -9,8 +9,8 @@ function FourtyYard() {
   const [leaderboard, setLeaderBoard] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const fetchData = () => {
-    fetch(
+  const fetchData = async () => {
+    await fetch(
       "https://script.google.com/macros/s/AKfycbx0TgGLsAH7_lu981e7M-9eY8mrbYKGGG-H1PBlkz129Bq-XJQ6JccWwd7Jv3NX4B6U/exec"
     )
       .then((response) => response.json())

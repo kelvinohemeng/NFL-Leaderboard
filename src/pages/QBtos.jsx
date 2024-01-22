@@ -9,8 +9,8 @@ function QBtoss() {
   const [leaderboard, setLeaderBoard] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const fetchData = () => {
-    fetch(
+  const fetchData = async () => {
+    await fetch(
       "https://script.google.com/macros/s/AKfycbxL0CsDYfjZtFXbm2g2FZXkLPsI9DhCsywc6exY7aeTaWOW3ksQuqxufbUxgjxYI1V1/exec"
     )
       .then((response) => response.json())
